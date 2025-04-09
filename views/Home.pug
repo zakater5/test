@@ -1,0 +1,76 @@
+doctype html
+html(lang="sl")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Kmetija Zupančič
+    link(rel="stylesheet", href="/static/css/style.css")
+  body
+    header
+      .logo-bar
+        img.logo(src="/static/res/logo.png", alt="Kmetija Zupančič Logo")
+        h1 Kmetija Zupančič
+        nav
+          ul.nav-links
+            li: a(href="#") Home
+            li: a(href="/about") About
+            li: a(href="/contact") Contact
+            li: a(href="#vec-o-nas") Več o nas
+            li: a(href="#izbrana-kakovost") Izbrana kakovost
+
+    main
+      section.hero
+        h2 Dobrodošli Na 
+        h2 Kmetija Zupančič
+        img.hero-img(src="/static/res/kmetija.png", alt="Farm Image")
+
+      section#about.about
+        .about-content
+          h2#vec-o-nas Več o nas
+          h3 Naša zgodba
+          p
+            | Dobrodošli na Kmetiji Zupančič, ki se nahaja v slikoviti vzhodni Sloveniji, kjer narava ponuja svoje najlepše razglede.
+            br
+            br
+            | Naša kmetija je zavezana pridelavi najkakovostnejšega mleka, ki je plod skrbnega dela in ljubezni do naših krav.
+            br
+            br
+            | Kmetija zupančič je držinska kmetija  katera ima večletno tradicijo. V zadnji in danasnji generaciji se je začela ukvarati pri pridelavi mleka in uvazanje v šole in vrce
+
+
+      section#services.services
+        .services-container
+          h2.services-titletodo Slike zadovoljnih krav
+          .services-img
+            img(src="/static/res/krava1.jpg", alt="Farm Interior")
+            img(src="/static/res/krava2.jpg", alt="Farm Interior")
+            img(src="/static/res/krava3.jpg", alt="Farm Interior")
+
+      section#feature.feature
+        .feature-container
+          .feature-img
+            img(src="/static/res/mleko.png", alt="Feature Highlight")
+            img(src="/static/res/kakovost slika.png", alt="Feature Highlight")#kakovost-slika
+          .feature-text
+            h2#izbrana-kakovost Izbrana kakovost
+            h3 Samo najboljše
+            p
+              | Naša kmetija prideluje mleko, ki nosi certifikat "Izbrana kakovost".
+              br
+              br
+              | To pomeni, da naše mleko izpolnjuje stroge standarde in merila glede sestave, okoljske trajnosti, dobrobiti živali, zdravstvenega varstva,
+              | načina krmljenja ter minimalne obdelave pri skladiščenju in transportu.
+
+      footer.footer
+        .footer-content
+          div.footer-contact
+            h3 Kmetija Zupančič
+            p info.kmetijazup@gmail.com
+            p 070385531 | Vid Zupančič
+            p ©2024 by Kmetija Zupančič.
+          div.footer-images
+            img(src="/static/res/zastava.png" alt="slo")
+            img(src="/static/res/kakovost slika.png" alt="kakovost")
+
+
+

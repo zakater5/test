@@ -1,0 +1,46 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        title Login
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
+        link(rel="stylesheet", href="/static/css/style.css")
+
+    body
+        header.p-3.bg-dark.text-white
+            .container
+                .d-flex.flex-wrap.align-items-center.justify-content-between
+                    a(href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none")
+                        i.fab.fa-bootstrap.fa-2x
+                    ul(style="margin-right: auto !important; margin-left: 2%;").nav.me-auto.mb-2.mb-lg-0
+                        li.nav-item
+                            a.nav-link.px-2.text-white(href="/") Home
+                        li.nav-item
+                            a.nav-link.px-2.text-white(href="/about") About
+
+        .container
+            .row.justify-content-center
+                .col-md-6
+                    .card.border-primary.bg-dark
+                        if UserLoggedIn
+                            p Already logged in, <a href="/logout">logout</a>
+                        else
+                            .card-header
+                                h3.text-center Login
+                            .card-body
+                                form(action="/login", method="POST")
+                                    .form-group
+                                        label(for="email" class="text-white") Email
+                                        input#email.form-control(type="email", name="email", placeholder="Enter email", required)
+                                    .form-group
+                                        label(for="password" class="text-white") Password
+                                        input#password.form-control(type="password", name="password", placeholder="Enter password", required)
+                                    button.btn.btn-primary.btn-block(type="submit") Login
+                                p Dont have an account yet? <a href="/register"> Sign-up</a>
+
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
+

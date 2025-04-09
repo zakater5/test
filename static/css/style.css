@@ -1,0 +1,427 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #f8f5ee;
+  color: #4a2c1d;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.logo {
+  height: 130px;
+  width: 130px;
+}
+
+h1 {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-left: 1rem;
+}
+
+nav ul.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul.nav-links a {
+  text-decoration: none;
+  color: #4a2c1d;
+  font-weight: bold;
+  padding-bottom: 5px; /* Optional: Adds some space for the bottom border */
+  border-bottom: 2px solid transparent; /* Initial state: no visible border */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+nav ul.nav-links a:hover {
+  border-bottom: 2px solid #000;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Courier New', monospace;
+  color: #964B00;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  margin-top: 2rem;
+}
+
+
+.about {
+  background-color: #b45523;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: left;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Courier New', monospace;
+}
+
+.about h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.about p {
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f8f5ee;
+  padding: 4rem 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-container {
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.services-img {
+  flex: 1 1 50%;
+  padding: 1rem;
+}
+
+.services-img img {
+  width: 20%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.services-text {
+  flex: 1 1 50%;
+  padding: 1rem;
+  font-family: 'Courier New', monospace;
+  color: #964B00;
+}
+
+.services-text h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.service {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #964B00;
+}
+
+.text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.text p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.feature {
+  background-color: #b45523;
+  color: white;
+  padding: 4rem 2rem;
+}
+
+.feature-container {
+  position: relative;
+  display: inline-block;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.feature-img {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.feature-img img {
+  width: 100%;
+  border: 8px solid white;
+  border-radius: 5px;
+}
+
+.feature-text {
+  flex: 1 1 50%;
+  font-family: 'Courier New', monospace;
+}
+
+.feature-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-text h3 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.feature-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer {
+  background-color: #fff;
+  color: #444;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.footer-content p {
+  margin: 0.3rem 0;
+}
+
+.auth-section {
+  background-color: #f8f5ee;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-box {
+  background-color: white;
+  border: 2px solid #b45523;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
+
+.auth-box h2 {
+  margin-bottom: 1.5rem;
+  color: #b45523;
+}
+
+.auth-box input,
+.auth-box textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.auth-box button {
+  background-color: #b45523;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-box a {
+  color: #b45523;
+  text-decoration: underline;
+}
+
+.contact {
+  background-color: #f8f5ee;
+  padding: 4rem 2rem;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-content form {
+  margin-top: 2rem;
+}
+
+.contact-content input,
+.contact-content textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.contact-content button {
+  background-color: #b45523;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#kakovost-slika {
+  position: absolute;
+  width: 20%;
+  border: none;
+  height: auto;
+  top: -5%;
+  right: -5%;
+}
+
+
+.feature-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap; /* Optional: stack on small screens */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.feature-img {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  flex: 1;
+}
+
+.feature-img img:first-child {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#kakovost-slika {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%; /* scale relative to container */
+  height: auto;
+  z-index: 2;
+}
+
+.feature-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+
+
+
+footer.footer {
+  background-color: #f5f5f5; /* or whatever background you want */
+  padding: 2rem;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.footer-content {
+  align-items: center;
+  flex-wrap: wrap; /* stack on small screens */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-images {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.footer-images img {
+  height: 50px; /* adjust size as needed */
+  width: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-contact {
+    margin-top: 1rem;
+  }
+}
+
+.services-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.services-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.services-img {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* space between images */
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+.services-img img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* optional rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* optional shadow */
+}

@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Login – Kmetija Zupančič
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
+    link(rel="stylesheet", href="/static/css/style.css")
+  body
+    section.auth-section
+      .auth-box
+        h2 Login to Your Account
+        form(action="/login", method="POST")
+          input(type="email", name="email", placeholder="Email", required)
+          input(type="password", name="password", placeholder="Password", required)
+          button(type="submit") Login
+        p Don't have an account? 
+          a(href="/register") Register here
+
+  script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js")
+  script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js")
+  script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")

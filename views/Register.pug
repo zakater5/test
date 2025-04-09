@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Register – Kmetija Zupančič
+    link(rel="stylesheet", href="/static/css/style.css")
+  body
+    section.auth-section
+      .auth-box
+        h2 Create a New Account
+        form(action="/register", method="POST")
+          input(type="text", name="name", placeholder="Full Name", required)
+          input(type="email", name="email", placeholder="Email", required)
+          input(type="password", name="password", placeholder="Password", required)
+          button(type="submit") Register
+        p Already have an account? 
+          a(href="/login") Login here
