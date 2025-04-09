@@ -3,6 +3,19 @@ require('dotenv').config(); // Load environment variables
 const rateLimit_req = process.env.RATE_LIMIT_REQUESTS;
 const rateLimit_time = process.env.RATE_LIMIT_TIME;
 
+const fs = require('fs');
+// SSL //
+const https_port = 443;
+const cert = fs.readFileSync('./ssl/merchdropz_com.crt', 'utf-8');
+const ca = fs.readFileSync('./ssl/merchdropz_com.ca-bundle', 'utf-8');
+const key = fs.readFileSync('./ssl/private_key.key', 'utf-8');
+
+let ssl_options = {
+    cert: cert, // fs.readFileSync('./ssl/example.crt');
+    ca: ca, // fs.readFileSync('./ssl/example.ca-bundle');
+    key: key // fs.readFileSync('./ssl/example.key');
+}
+
 // Libraries //
 const LoggerClass = require('./Logger');
 const { parse } = require('path');
@@ -182,6 +195,30 @@ POST_Routes_Array.forEach(route => {
 
 // WebServer Listener/s //
 httpServer_Port = process.env.PORT || 3000;
-server.listen(httpServer_Port, "0.0.0.0", () => {
-    console.log("Http server is running on port *:", httpServer_Port);
-});
+//server.listen(httpServer_Port, "0.0.0.0", () => {
+//    console.log("Http server is running on port *:", httpServer_Port);
+//});
+
+
+if (process.env.USE_HTTPS == "true") {
+    app.use((req, res, next) => {
+        if(req.protocol === 'http') {
+          res.redirect(301, `https://${req.headers.host}${req.url}`);
+        }
+        next();
+     });
+    
+    const httpServer = http.createServer((req, res) => {
+       res.statusCode = 301;
+       res.setHeader('Location', `https://${process.env.HOSTNAME}${req.url}`);
+       res.end(); // make sure to call send() or end() to send the response
+    });
+    httpServer.listen(httpServer_Port);
+    
+    const httpsServer = https.createServer(ssl_options, app);
+    httpsServer.listen(https_port, "0.0.0.0");
+} else {
+    server.listen(httpServer_Port, "0.0.0.0", () => {
+        console.log("Listening on port *:", httpServer_Port);
+    });
+}

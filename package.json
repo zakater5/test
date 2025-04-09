@@ -5,7 +5,7 @@
     "bluebird": "^3.7.2",
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.4.7",
     "express": "^4.19.2",
     "express-rate-limit": "^7.3.1",
     "express-session": "^1.18.0",
